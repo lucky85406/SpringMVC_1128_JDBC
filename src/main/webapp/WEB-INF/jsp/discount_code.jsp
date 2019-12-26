@@ -1,17 +1,24 @@
-<%-- 
-    Document   : discount_code
-    Created on : 2019/12/26, 下午 08:40:56
-    Author     : study
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>discount_code</h1>
-    </body>
+<head>
+    <%@include file="fragment/head.jspf" %>
+</head>
+<body>
+<div id="layout">
+    <!-- Menu  -->
+    <%@include file="fragment/menu.jspf" %>
+    <!-- Body -->
+    <div id="main">
+        <div class="header">
+            <h1>Discount Code</h1>
+            <h2>A subtitle for your page goes here</h2>
+        </div>
+
+        <div class="content">
+            <h2 class="content-subhead">How to use this layout</h2>
+        </div>
+    </div>
+</div>
+</body>
 </html>
