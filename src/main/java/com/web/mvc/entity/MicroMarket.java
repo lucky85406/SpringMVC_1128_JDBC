@@ -37,5 +37,10 @@ public class MicroMarket {
     public void setAreaWidth(double areaWidth) {
         this.areaWidth = areaWidth;
     }
+
+    @Override
+    public String toString() {
+        return "MicroMarket{" + "zipCode=" + zipCode + ", radio=" + radio + ", areaLength=" + areaLength + ", areaWidth=" + areaWidth + '}';
+    }
     
 }

@@ -17,6 +17,8 @@
 
         <div class="content">
             <h2 class="content-subhead">How to use this layout</h2>
+            <h1>${list}</h1>
+            <h1>${mic}</h1>
         </div>
     </div>
 </div>
