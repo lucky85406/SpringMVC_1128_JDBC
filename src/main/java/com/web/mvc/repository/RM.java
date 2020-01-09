@@ -4,6 +4,7 @@ import com.web.mvc.entity.Customer;
 import com.web.mvc.entity.DiscountCode;
 import com.web.mvc.entity.Manufacturer;
 import com.web.mvc.entity.MicroMarket;
+import com.web.mvc.entity.PUView;
 import com.web.mvc.entity.Product;
 import com.web.mvc.entity.ProductCode;
 import com.web.mvc.entity.PurchaseOrder;
@@ -96,6 +97,21 @@ public class RM {
         } catch (Exception e) {
         }
         po.setFreightCompany(rs.getString("FREIGHT_COMPANY"));
+        return po;
+    };
+    
+     static RowMapper<PUView> puviewMapper = (ResultSet rs, int rowNum) -> {
+        PUView po = new PUView();
+        po.setOrderNum(rs.getInt("ORDER_NUM"));
+        po.setCustomerId(rs.getInt("CUSTOMER_ID"));
+        po.setCustomerName(rs.getString("CUSTOMER_NAME"));
+        po.setProductId(rs.getInt("PRODUCT_ID"));
+        po.setProductName(rs.getString("PRODUCT_NAME"));
+        po.setProductCodeName(rs.getString("PRODUCT_CODE_NAME"));
+        po.setQuantity(rs.getInt("QUANTITY"));
+        po.setPurchaseCost(rs.getDouble("PURCHASE_COST"));
+        po.setRate(rs.getDouble("RATE"));
+        po.setSubtotal(rs.getDouble("SUBTOTAL"));
         return po;
     };
     
