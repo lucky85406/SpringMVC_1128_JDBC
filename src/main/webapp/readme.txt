@@ -7,3 +7,6 @@ http://localhost:8080/SpringMVC_1128_JDBC/mvc/discount_code/input
 MicroMarketController.java 維護 MICRO_MARKET 資料表
 \WEB-INF\jsp\micro_market.jsp
 http://localhost:8080/SpringMVC_1128_JDBC/mvc/micro_market/input
+
+增加資料庫
+services -- new Database(northwinds)
