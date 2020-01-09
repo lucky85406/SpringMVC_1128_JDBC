@@ -1,4 +1,3 @@
-
 package com.web.mvc.controller;
 
 import java.util.Date;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TimeController {
     @RequestMapping("/time")
     @ResponseBody
-    public String getTime(){
+    public String getTime() {
         return new Date().toString();
     }
 }

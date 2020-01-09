@@ -6,6 +6,16 @@
 <html>
     <head>
         <%@include file="fragment/head.jspf" %>
+        <script>
+            $(document).ready(function () {
+                $(".delete").click(function () {
+                    var href = $(this).attr("href");
+                    $("#_method").val("DELETE")
+                    $("#myform").attr("action", href).submit();
+                    return  false;
+                })
+            })
+        </script>
     </head>
     <body>
         <div id="layout">
@@ -15,11 +25,11 @@
             <div id="main">
                 <div class="header">
                     <h1>Discount Code</h1>
-                    <h2>A subtitle for your page goes here</h2>
+                    <h2>折扣碼資料維護</h2>
                 </div>
 
                 <div class="content">
-                    <h2 class="content-subhead">折扣碼維護</h2>
+                    <h2 class="content-subhead">折扣碼資料維護</h2>
                     <form:form modelAttribute="po" id="myform" method="post" action="${pageContext.request.contextPath}/mvc/discount_code/" class="pure-form">
                         <fieldset>
                             <form:input path="discountCode" placeholder="請輸入折扣碼" />
@@ -29,7 +39,7 @@
                             <button type="reset" class="pure-button pure-button-primary">reset</button>
                         </fieldset>
                     </form:form>
-                    <h2 class="content-subhead">折扣碼列表</h2>
+                    <h2 class="content-subhead">折扣碼資料列表</h2>
                     <table class="pure-table pure-table-bordered">
                         <thead>
                             <tr>
@@ -40,11 +50,11 @@
                         </thead>
 
                         <tbody>
-                            <c:forEach var="dc" items="${list}">
+                            <c:forEach var="item" items="${list}">
                                 <tr>
-                                    <td><button type="button" class="pure-button pure-button-primary">刪除</button></td>
-                                    <td><a href="${pageContext.request.contextPath}/mvc/discount_code/${dc.discountCode}">${dc.discountCode}</a></td>
-                                    <td>${dc.rate}</td>
+                                    <td title="按我一下可刪除"><a href="${pageContext.request.contextPath}/mvc/discount_code/${item.discountCode}" class="delete">刪除</a></td>
+                                    <td title="按我一下可修改"><a href="${pageContext.request.contextPath}/mvc/discount_code/${item.discountCode}">${item.discountCode}</a></td>
+                                    <td>${item.rate}</td>
                                 </tr>
                             </c:forEach>
                         </tbody>
